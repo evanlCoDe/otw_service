@@ -68,6 +68,46 @@ return (
 
       {editable ? (
           <>
+          <div className="mb-3">
+  <label className="form-label">Title</label>
+  <input
+    type="text"
+    className="form-control"
+    value={task.text}
+    onChange={(e) => handleChange("text", e.target.value)}
+    placeholder="Title"
+  />
+</div>
+<div className="mb-3">
+  <label className="form-label">Address</label>
+  <input
+    type="text"
+    className="form-control"
+    value={task.address}
+    onChange={(e) => handleChange("address", e.target.value)}
+    placeholder="Address"
+  />
+</div>
+<div className="mb-3">
+  <label className="form-label">Google Maps Embed Link</label>
+  <input
+    type="text"
+    className="form-control"
+    value={task.mapLink}
+    onChange={(e) => handleChange("mapLink", e.target.value)}
+    placeholder="Google Map Embed Link"
+  />
+</div>
+<div className="mb-3">
+  <label className="form-label">Description</label>
+  <textarea
+    className="form-control"
+    value={task.description}
+    onChange={(e) => handleChange("description", e.target.value)}
+    placeholder="Description"
+    rows={3}
+  />
+</div>
     {/* ...other input fields... */}
     <div className="mb-3">
       <label className="form-label">Image links</label>

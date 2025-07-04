@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/otw_service">
       {}
       <div
         style={{

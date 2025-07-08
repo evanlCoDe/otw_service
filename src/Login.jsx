@@ -57,12 +57,34 @@ function Login({ onLogin }) {
 
   return (
     <div
-      className="container-fluid min-vh-100 d-flex justify-content-center align-items-center"   
-      style={{ backgroundColor: "#000" }}
+      className="container-fluid min-vh-100 d-flex justify-content-center align-items-center"
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        minHeight: "100vh",
+        padding: 0,
+      }}
     >
-     
-      {/* Removed video background */}
-      <div className="card p-4 shadow" style={{ minWidth: "350px" }}>
+      {/* Video background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          objectFit: "cover",
+          zIndex: 0,
+        }}
+      >
+        <source src="video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="card p-4 shadow" style={{ minWidth: "350px", zIndex: 1 }}>
         <h2 className="mb-4 text-center">{showSignUp ? "Sign Up" : "Login"}</h2>
         {!showSignUp ? (
           <>

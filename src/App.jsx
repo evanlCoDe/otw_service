@@ -62,7 +62,15 @@ function App() {
       
       {user ? (
         <>
-          <div className="d-flex justify-content-end p-3">
+          <div className="d-flex justify-content-end align-items-center p-3" style={{ gap: "10px" }}>
+            <span style={{ color: "#888", fontSize: "1rem" }}>
+              Log in as <span style={{ fontWeight: "bold" }}>{user.username}</span>
+              {user.SuperAccount ? (
+                <span style={{ fontWeight: "normal" }}> (admin)*</span>
+              ) : (
+                <span style={{ fontWeight: "normal" }}> (user)*</span>
+              )}
+            </span>
             <button className="btn btn-outline-danger" onClick={() => setUser(null)}>
               Logout
             </button>

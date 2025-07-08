@@ -174,13 +174,7 @@ function TaskDetail({ user }) {
                       referrerPolicy="no-referrer-when-downgrade"
                       title="Google Map"
                     ></iframe>
-                    <a
-                      href={extractSrcFromIframe(task.mapLink) || task.mapLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View Map
-                    </a>
+                    
                   </div>
                 )}
               </p>
@@ -204,6 +198,28 @@ function TaskDetail({ user }) {
               />
             ))}
           </div>
+          {
+              <p>
+                <strong>Map：</strong>
+                {task.mapLink && (
+                  <div className="my-2">
+                    <iframe
+                      src={extractSrcFromIframe(task.mapLink) || task.mapLink}
+                      width="100%"
+                      height="300"
+                      style={{ border: 0 }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Google Map"
+                    ></iframe>
+                    
+                  </div>
+                )}
+              </p>
+
+
+            }
         </div>
       </div>
     </div>
